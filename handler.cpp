@@ -7,7 +7,7 @@ handler::handler()
 }
 
 double handler::height_points(){
-    if (data.get_height() >current_height){
+    if (data.get_height() >current_height+0.5){
         height = 1+(data.get_height()-current_height);
         current_height = data.get_height();
         return height;
