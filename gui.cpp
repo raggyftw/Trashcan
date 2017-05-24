@@ -2,8 +2,6 @@
 #include "ui_dialog.h"
 #include "QDebug"
 
-
-
 GUI::GUI(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::GUI)
@@ -24,7 +22,10 @@ GUI::~GUI()
 
 void GUI::update_score(int team)
 {
-    teams[team]+=(hdl.height_points()*hdl.weight_points())-1;
+    if(hdl.height_points()*hdl.weight_points() != 1){
+    teams[team]+=hdl.height_points()*hdl.weight_points();
+    }
+
     ui->lcd1->display(teams[0]);
     ui->lcd2->display(teams[1]);
     ui->lcd3->display(teams[2]);
