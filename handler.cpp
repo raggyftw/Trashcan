@@ -1,6 +1,7 @@
 #include "handler.h"
 
-handler::handler(){
+handler::handler()
+{
     current_height  = 0;
     current_weight  = 0;
 }

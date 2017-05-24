@@ -24,6 +24,7 @@ arduino_data::arduino_data(QWidget *parent) :
         }
     }
 
+
     if(arduino_is_available){
         arduino->setPortName(arduino_uno_port_name);
         arduino->open(QSerialPort::ReadOnly);
@@ -38,16 +39,21 @@ arduino_data::arduino_data(QWidget *parent) :
     }
 }
 
-arduino_data::~arduino_data(){
+
+arduino_data::~arduino_data()
+{
     if(arduino->isOpen()){
         arduino->close();
     }
 }
 
-void arduino_data::readSerial(){
+
+void arduino_data::readSerial()
+{
 
     QStringList buffer_split = serialBuffer.split(",");
     //qDebug() << buffer_split;
+
 
     if(buffer_split.length() < 3){
         serialData = arduino->readAll();
@@ -61,12 +67,13 @@ void arduino_data::readSerial(){
         height_value =  (parsed_height.toDouble());
         qDebug()<<height_value<<weight_value;
     }
+
 }
 double arduino_data::get_weight(){
-    weight = weight_value;
-    return weight;
+weight = weight_value*-1;
+return weight;
 }
 double arduino_data::get_height(){
-    height= height_value;
-    return height;
+height= height_value;
+return height;
 }

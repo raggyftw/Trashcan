@@ -3,18 +3,22 @@
 
 #include <QDialog>
 #include "handler.h"
+#include <vector>
+
 
 namespace Ui {
 class GUI;
 }
 
-class GUI : public QDialog{
+class GUI : public QDialog
+{
     Q_OBJECT
 
 public:
     explicit GUI(QWidget *parent = 0);
     ~GUI();
      Ui::GUI *ui;
+
 
 private slots:
      void on_button1_clicked();
@@ -24,8 +28,10 @@ private slots:
 
 private:
      handler hdl;
-     double teams [4];
+     std::vector<double> teams;
      void update_score(int);
+
+
 };
 
 #endif // GUI_H
