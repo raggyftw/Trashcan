@@ -52,6 +52,8 @@ void arduino_data::readSerial()
 {
 
     QStringList buffer_split = serialBuffer.split(",");
+    //qDebug() << buffer_split;
+
 
     if(buffer_split.length() < 3){
         serialData = arduino->readAll();
@@ -63,6 +65,7 @@ void arduino_data::readSerial()
         weight_value =  (parsed_weight.toDouble());
         parsed_height = buffer_split[0];
         height_value =  (parsed_height.toDouble());
+        qDebug()<<height_value<<weight_value;
     }
 
 }

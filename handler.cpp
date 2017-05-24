@@ -8,7 +8,7 @@ handler::handler()
 
 double handler::height_points(){
     if (data.get_height() >current_height+0.5){
-        height = 1+(data.get_height()-current_height);
+        height = data.get_height()-current_height;
         current_height = data.get_height();
         return height;
     }
@@ -19,7 +19,7 @@ double handler::height_points(){
 
 double handler::weight_points(){
     if (data.get_weight() >current_weight+10){
-        weight = 1+(data.get_weight()-current_weight);
+        weight = data.get_weight()-current_weight;
         current_weight = data.get_weight();
         return weight;
     }
