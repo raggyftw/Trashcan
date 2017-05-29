@@ -4,12 +4,12 @@
 
 GUI::GUI(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::GUI)
+    ui(new Ui::GUI)//Setting up the Ui in the GUI class
 {
     ui->setupUi(this);
-    for (int i =0; i<4; i++){
+    for (int i =0; i<4; i++){//For loop to add all 4 teams to the teams vector 
         teams.push_back(0);
-    }
+    }//end of for-loop
 }
 
 
@@ -20,16 +20,16 @@ GUI::~GUI()
 }
 
 
-void GUI::update_score(int team)
+void GUI::update_score(int team) 
 {
     if(hdl.height_points()*hdl.weight_points() != 1){
     teams[team]+=hdl.height_points()*hdl.weight_points();
     }
 
-    ui->lcd1->display(teams[0]);
-    ui->lcd2->display(teams[1]);
-    ui->lcd3->display(teams[2]);
-    ui->lcd4->display(teams[3]);
+    ui->lcd1->display(teams[0]);//Update the LCD with the 1st element of the vector
+    ui->lcd2->display(teams[1]);//Update the LCD with the 2nd element of the vector
+    ui->lcd3->display(teams[2]);//Update the LCD with the 3rd element of the vector
+    ui->lcd4->display(teams[3]);//Update the LCD with the 4th element of the vector
 
 }
 
