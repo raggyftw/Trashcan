@@ -7,14 +7,14 @@ class handler
 {
 public:
     handler();
-    double height_points();
-    double weight_points();
+    double height_points(); //method to get the height from the arduino
+    double weight_points(); //method to get the weight from the arduino
 private:
-    arduino_data data;
-    double current_height;
-    double current_weight;
-    double height;
-    double weight;
-};
+    arduino_data data; //Creates an object of the arduino_data class
+    double current_height; //double to store the current height
+    double current_weight; //double to store the current weight
+    double height; //double to store the height
+    double weight; //double to store the weight
+};//end of handler class
 
 #endif // HANDLER_H
