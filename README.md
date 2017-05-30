@@ -1,2 +1,2 @@
 # Trashcan
-Intelligent trashcan by Group B378A at Aau 
+Intelligent trashcan by Group B378a at Aau 
