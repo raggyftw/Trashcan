@@ -22,8 +22,8 @@ GUI::~GUI()
 
 void GUI::update_score(int team) 
 {
-    if(hdl.height_points()*hdl.weight_points() != 1){
-    teams[team]+=hdl.height_points()*hdl.weight_points();
+    if(hdl.height_points() * hdl.weight_points() != 1){
+    teams[team]+=hdl.height_points() * hdl.weight_points();
     }
 
     ui->lcd1->display(teams[0]);//Update the LCD with the 1st element of the vector
